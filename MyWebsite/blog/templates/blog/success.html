@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Form Submitted{% endblock %}
+
+{% block content %}
+<h1>Form Submitted Successfully!</h1>
+<p><strong>Name Provided:</strong> {{ name }}</p>
+<p><strong>Email Provided:</strong> {{ email }}</p>
+<a href="{% url 'contact_form' %}">Go Back</a>
+{% endblock %}

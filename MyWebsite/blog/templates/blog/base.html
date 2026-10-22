@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}My Django Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="{% url 'book_list' %}">Books</a>
+            <a href="{% url 'contact_form' %}">Contact</a>
+        </div>
+        <div class="user-menu">
+            {% if user.is_authenticated %}
+            <span>Welcome, {{ user.username }}!</span>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit">Log Out</button>
+            </form>
+            {% else %}
+            <a href="{% url 'login' %}">Log In</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <hr>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 My Website</p>
+    </footer>
+</body>
+</html>

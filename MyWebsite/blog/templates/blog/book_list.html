@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Library Catalog{% endblock %}
+
+{% block content %}
+<h1>Library Catalog</h1>
+<ul>
+    {% for book in books %}
+    <li>{{ book.title }}</li>
+    {% empty %}
+    <li>No books have been added yet!</li>
+    {% endfor %}
+</ul>
+{% endblock %}

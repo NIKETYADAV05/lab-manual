@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Django development server",
+			"type": "shell",
+			"command": "c:\\Users\\Niket\\OneDrive\\Desktop\\python\\.venv\\Scripts\\python.exe",
+			"args": [
+				"MyWebsite\\manage.py",
+				"runserver",
+				"127.0.0.1:8000"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}
